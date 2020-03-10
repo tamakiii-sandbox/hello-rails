@@ -7,4 +7,9 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends make sqlite3 nodejs npm yarn && \
     apt-get clean
 
-RUN gem install -v 6.0.2.1 rails
+COPY install /tmp/install
+RUN make -C /tmp/install install && \
+    rm -rf /tmp/install
+
+COPY docker-entrypoint.sh /usr/sbin
+ENTRYPOINT [ "docker-entrypoint.sh" ]

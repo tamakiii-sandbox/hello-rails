@@ -5,4 +5,6 @@ services:
     working_dir: /repo/hello-rails
     volumes:
       - .:/repo/hello-rails
+    ports:
+      - 3000:3000
 
