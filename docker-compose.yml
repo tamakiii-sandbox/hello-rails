@@ -2,7 +2,7 @@ version: "3.7"
 services:
   ruby:
     build: docker/ruby
-    working_dir: /repo/hello-rails/app
+    working_dir: /repo/hello-rails
     volumes:
       - .:/repo/hello-rails
 
